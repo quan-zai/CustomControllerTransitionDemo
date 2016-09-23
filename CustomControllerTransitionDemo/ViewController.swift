@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController{
 
     var tableView : UITableView?
     
@@ -23,8 +23,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         view.addSubview(tableView!)
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Action", style: .plain, target: self, action: #selector(rightButtonClick(button:)))
-        
     }
+    
+    func rightButtonClick(button:UIButton)
+    {
+        let result: UIViewController = ResultViewController()
+        present(result, animated: true) {
+            
+        }
+    }
+}
+
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return titleArray.count;
@@ -35,13 +45,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.textLabel?.text = titleArray[indexPath.row]
         return cell
     }
-    
-    func rightButtonClick(button:UIButton)
-    {
-        present(ResultViewController(), animated: true) { 
-            
-        }
-    }
-    
 }
+
 

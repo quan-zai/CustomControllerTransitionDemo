@@ -8,24 +8,24 @@ provides-member:
 provides-dynamic-lookup:
 - "applicationWillEnterForeground"
 - "applicationDidEnterBackground"
-- "applicationWillResignActive"
 - "application"
+- "applicationWillResignActive"
 - "applicationWillTerminate"
 - "window"
 - "applicationDidBecomeActive"
 depends-top-level:
-- "UIApplication"
-- "AppDelegate"
 - "UIWindow"
+- "AppDelegate"
 - "UIApplicationLaunchOptionsKey"
 - "UIResponder"
-- !private "BooleanLiteralType"
-- "Bool"
-- !private "ViewController"
 - !private "UINavigationController"
+- !private "BooleanLiteralType"
+- !private "ViewController"
+- "Bool"
+- !private "UIScreen"
+- "UIApplication"
 - "AssignmentPrecedence"
 - "UIApplicationDelegate"
-- !private "UIScreen"
 depends-member:
 - !private ["Ps9AnyObject", "UINavigationController"]
 - !private ["Ps9AnyObject", "UIScreen"]

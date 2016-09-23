@@ -7,29 +7,29 @@ provides-member:
 - ["C30CustomControllerTransitionDemo14ViewController", ""]
 provides-dynamic-lookup:
 - "titleArray"
-- "rightButtonClick"
 - "viewDidLoad"
 - "tableView"
 - "tableView"
 - "tableView"
+- "rightButtonClick"
 depends-top-level:
-- "AssignmentPrecedence"
-- "UITableViewCell"
 - "UIButton"
 - !private "UIScreen"
-- "ViewController"
-- "UITableViewDataSource"
-- !private "ResultViewController"
-- "UIViewController"
-- !private "BooleanLiteralType"
-- "UITableViewDelegate"
-- "IndexPath"
+- "AssignmentPrecedence"
 - "UITableView"
-- !private "UIBarButtonItem"
-- "StringLiteralType"
-- "Int"
-- "Array"
 - !private "CGRect"
+- "UIViewController"
+- "IndexPath"
+- "Int"
+- "ViewController"
+- !private "BooleanLiteralType"
+- "StringLiteralType"
+- "UITableViewCell"
+- "UITableViewDelegate"
+- !private "ResultViewController"
+- "UITableViewDataSource"
+- !private "UIBarButtonItem"
+- "Array"
 depends-member:
 - !private ["Ps9AnyObject", "CGRect"]
 - !private ["Ps9AnyObject", "ResultViewController"]
@@ -586,6 +586,7 @@ depends-member:
 - !private ["CSo8NSObject", "UIScreen"]
 - ["CSo8NSObject", "UITableView"]
 - ["CSo8NSObject", "UITableViewCell"]
+- !private ["CSo8NSObject", "UIViewController"]
 - !private ["CSo8NSObject", "addSubview"]
 - !private ["CSo8NSObject", "bounds"]
 - !private ["CSo8NSObject", "dataSource"]
@@ -907,6 +908,7 @@ depends-member:
 - !private ["CSo11UIResponder", "UIScreen"]
 - ["CSo11UIResponder", "UITableView"]
 - ["CSo11UIResponder", "UITableViewCell"]
+- !private ["CSo11UIResponder", "UIViewController"]
 - !private ["CSo11UIResponder", "addSubview"]
 - !private ["CSo11UIResponder", "dataSource"]
 - !private ["CSo11UIResponder", "delegate"]
@@ -1188,6 +1190,7 @@ depends-member:
 - !private ["CSo16UIViewController", "UIScreen"]
 - ["CSo16UIViewController", "UITableView"]
 - ["CSo16UIViewController", "UITableViewCell"]
+- !private ["CSo16UIViewController", "UIViewController"]
 - ["CSo16UIViewController", "deinit"]
 - ["CSo16UIViewController", "indexPathForPreferredFocusedView"]
 - ["CSo16UIViewController", "indexPathForPreferredFocusedViewInTableView"]
@@ -1218,6 +1221,7 @@ depends-member:
 - ["CSo16UIViewController", "viewForZooming"]
 - ["CSo16UIViewController", "viewForZoomingInScrollView"]
 - ["CSo16UIViewController", ""]
+- !private ["PSo37UIViewControllerTransitioningDelegate", "init"]
 - !private ["C30CustomControllerTransitionDemo14ViewController", "CGRect"]
 - ["C30CustomControllerTransitionDemo14ViewController", "IndexPath"]
 - ["C30CustomControllerTransitionDemo14ViewController", "Int"]
@@ -1227,6 +1231,7 @@ depends-member:
 - !private ["C30CustomControllerTransitionDemo14ViewController", "UIScreen"]
 - ["C30CustomControllerTransitionDemo14ViewController", "UITableView"]
 - ["C30CustomControllerTransitionDemo14ViewController", "UITableViewCell"]
+- !private ["C30CustomControllerTransitionDemo14ViewController", "UIViewController"]
 - ["C30CustomControllerTransitionDemo14ViewController", "deinit"]
 - ["C30CustomControllerTransitionDemo14ViewController", "indexPathForPreferredFocusedView"]
 - ["C30CustomControllerTransitionDemo14ViewController", "indexPathForPreferredFocusedViewInTableView"]
@@ -1457,6 +1462,7 @@ depends-nominal:
 - "PSo18UITraitEnvironment"
 - !private "CSo6UIView"
 - "CSo16UIViewController"
+- !private "PSo37UIViewControllerTransitioningDelegate"
 - "C30CustomControllerTransitionDemo14ViewController"
 - "Ps14_ArrayProtocol"
 - !private "Ps37_DefaultCustomPlaygroundQuickLookable"
@@ -1485,4 +1491,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
-interface-hash: "c0c2705da9311265d12a94162546bbf0"
+interface-hash: "b05a4a1e4e4fd1ac0cd720408179b019"

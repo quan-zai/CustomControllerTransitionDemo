@@ -108,11 +108,15 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		zQmcyebiX8Ujh65oMOVfCN2igaw=
+		qkcviDvZ9gHUea0R1elF6wVSZKc=
 		</data>
 		<key>PkgInfo</key>
 		<data>
 		n57qDP4tZfLD1rCS43W0B4LQjzE=
+		</data>
+		<key>image.jpg</key>
+		<data>
+		f9Cs02U66FFpyTU9cAMOMjkxJns=
 		</data>
 		<key>libswiftRemoteMirror.dylib</key>
 		<data>
@@ -329,6 +333,17 @@
 			<key>hash2</key>
 			<data>
 			LtcKRthlwopiSpRsPPza7t7nRkfzLry8PHNzyeHDJX8=
+			</data>
+		</dict>
+		<key>image.jpg</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			f9Cs02U66FFpyTU9cAMOMjkxJns=
+			</data>
+			<key>hash2</key>
+			<data>
+			JVXMjCnZdUPGBYPF0jtjnsZ/ZQhxpyphhmV4BeHEzo8=
 			</data>
 		</dict>
 		<key>libswiftRemoteMirror.dylib</key>

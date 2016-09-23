@@ -111,6 +111,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 #if defined(__has_feature) && __has_feature(modules)
 @import UIKit;
+@import ObjectiveC;
 @import Foundation;
 #endif
 
@@ -131,30 +132,59 @@ SWIFT_CLASS("_TtC30CustomControllerTransitionDemo11AppDelegate")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@protocol UIViewControllerContextTransitioning;
+
+SWIFT_CLASS("_TtC30CustomControllerTransitionDemo32CustomDismissAnimationController")
+@interface CustomDismissAnimationController : NSObject <UIViewControllerAnimatedTransitioning>
+- (NSTimeInterval)transitionDuration:(id <UIViewControllerContextTransitioning> _Nullable)transitionContext;
+- (void)animateTransition:(id <UIViewControllerContextTransitioning> _Nonnull)transitionContext;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC30CustomControllerTransitionDemo32CustomPresentAnimationController")
+@interface CustomPresentAnimationController : NSObject <UIViewControllerAnimatedTransitioning>
+- (NSTimeInterval)transitionDuration:(id <UIViewControllerContextTransitioning> _Nullable)transitionContext;
+- (void)animateTransition:(id <UIViewControllerContextTransitioning> _Nonnull)transitionContext;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UIImageView;
+@class UIButton;
 @class NSBundle;
 @class NSCoder;
 
 SWIFT_CLASS("_TtC30CustomControllerTransitionDemo20ResultViewController")
-@interface ResultViewController : UIViewController
+@interface ResultViewController : UIViewController <UIViewControllerTransitioningDelegate>
+@property (nonatomic, weak) UIButton * _Nullable dismissButton;
+@property (nonatomic, readonly, strong) CustomPresentAnimationController * _Nonnull customPresentAnimationController;
+@property (nonatomic, readonly, strong) CustomDismissAnimationController * _Nonnull customDismissAnimationController;
+@property (nonatomic, readonly, strong) UIImageView * _Nonnull imageView;
 - (void)viewDidLoad;
+- (void)dismissActionWithButton:(UIButton * _Nonnull)button;
+- (id <UIViewControllerAnimatedTransitioning> _Nullable)animationControllerForDismissedController:(UIViewController * _Nonnull)dismissed;
+- (id <UIViewControllerAnimatedTransitioning> _Nullable)animationControllerForPresentedController:(UIViewController * _Nonnull)presented presentingController:(UIViewController * _Nonnull)presenting sourceController:(UIViewController * _Nonnull)source;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
 @class UITableView;
-@class UITableViewCell;
-@class UIButton;
 
 SWIFT_CLASS("_TtC30CustomControllerTransitionDemo14ViewController")
-@interface ViewController : UIViewController <UIScrollViewDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface ViewController : UIViewController
 @property (nonatomic, strong) UITableView * _Nullable tableView;
 @property (nonatomic, copy) NSArray<NSString *> * _Nonnull titleArray;
 - (void)viewDidLoad;
-- (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section;
-- (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 - (void)rightButtonClickWithButton:(UIButton * _Nonnull)button;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UITableViewCell;
+
+@interface ViewController (SWIFT_EXTENSION(CustomControllerTransitionDemo)) <UITableViewDelegate, UIScrollViewDelegate, UITableViewDataSource>
+- (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section;
+- (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 @end
 
 #pragma clang diagnostic pop
