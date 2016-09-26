@@ -9,17 +9,17 @@ provides-dynamic-lookup:
 - "animateTransition"
 - "transitionDuration"
 depends-top-level:
-- "BooleanLiteralType"
+- !private "UIView"
 - !private "-"
 - "TimeInterval"
-- !private "UIView"
-- "NSObject"
-- "UIViewControllerAnimatedTransitioning"
-- "UIViewControllerContextTransitioning"
-- !private "UIScreen"
 - "AssignmentPrecedence"
-- "CustomPresentAnimationController"
+- "UIViewControllerContextTransitioning"
 - !private "CGRect"
+- "CustomPresentAnimationController"
+- "UIViewControllerAnimatedTransitioning"
+- "NSObject"
+- !private "UIScreen"
+- "BooleanLiteralType"
 depends-member:
 - !private ["Ps9AnyObject", "UIScreen"]
 - !private ["Ps9AnyObject", "UIView"]

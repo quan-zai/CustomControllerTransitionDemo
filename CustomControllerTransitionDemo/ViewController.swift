@@ -8,14 +8,18 @@
 
 import UIKit
 
-class ViewController: UIViewController{
+class ViewController: UIViewController, UINavigationControllerDelegate{
 
     var tableView : UITableView?
+    
+    let customNavigationAnimationController = CustomNavigationAnimationController()
     
     var titleArray = ["item 01", "item 02", "item 03", "item 04", "item 05"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.delegate = self
         
         tableView = UITableView(frame: CGRect(x:0, y:0, width:UIScreen.main.bounds.width, height:UIScreen.main.bounds.height), style: .plain)
         tableView?.delegate = self;
@@ -32,6 +36,15 @@ class ViewController: UIViewController{
             
         }
     }
+    
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        if operation == .push {
+            customNavigationAnimationController.reverse = false
+        } else {
+            customNavigationAnimationController.reverse = true
+        }
+        return customNavigationAnimationController
+    }
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
@@ -44,6 +57,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
         cell.textLabel?.text = titleArray[indexPath.row]
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.navigationController?.pushViewController(ResultViewController(), animated: true)
     }
 }
 

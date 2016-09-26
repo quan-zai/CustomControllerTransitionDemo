@@ -6,26 +6,26 @@ provides-nominal:
 provides-member:
 - ["C30CustomControllerTransitionDemo11AppDelegate", ""]
 provides-dynamic-lookup:
+- "window"
 - "applicationWillEnterForeground"
 - "applicationDidEnterBackground"
 - "application"
 - "applicationWillResignActive"
 - "applicationWillTerminate"
-- "window"
 - "applicationDidBecomeActive"
 depends-top-level:
-- "UIWindow"
-- "AppDelegate"
-- "UIApplicationLaunchOptionsKey"
-- "UIResponder"
-- !private "UINavigationController"
-- !private "BooleanLiteralType"
-- !private "ViewController"
-- "Bool"
-- !private "UIScreen"
-- "UIApplication"
-- "AssignmentPrecedence"
 - "UIApplicationDelegate"
+- "AppDelegate"
+- "UIWindow"
+- "AssignmentPrecedence"
+- "Bool"
+- "UIApplication"
+- !private "UIScreen"
+- !private "ViewController"
+- "UIResponder"
+- "UIApplicationLaunchOptionsKey"
+- !private "BooleanLiteralType"
+- !private "UINavigationController"
 depends-member:
 - !private ["Ps9AnyObject", "UINavigationController"]
 - !private ["Ps9AnyObject", "UIScreen"]
@@ -287,6 +287,7 @@ depends-member:
 - !private ["PSo11UIFocusItem", "rootViewController"]
 - ["CSo22UINavigationController", "deinit"]
 - !private ["CSo22UINavigationController", "init"]
+- !private ["PSo30UINavigationControllerDelegate", "init"]
 - ["CSo11UIResponder", "Bool"]
 - ["CSo11UIResponder", "UIApplication"]
 - ["CSo11UIResponder", "UIApplicationLaunchOptionsKey"]
@@ -407,6 +408,7 @@ depends-nominal:
 - !private "PSo18UIFocusEnvironment"
 - !private "PSo11UIFocusItem"
 - "CSo22UINavigationController"
+- !private "PSo30UINavigationControllerDelegate"
 - "CSo11UIResponder"
 - "PSo30UIResponderStandardEditActions"
 - "CSo8UIScreen"

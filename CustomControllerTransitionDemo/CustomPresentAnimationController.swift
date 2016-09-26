@@ -25,7 +25,7 @@ class CustomPresentAnimationController: NSObject, UIViewControllerAnimatedTransi
         containerView.addSubview(toViewController!.view)
         
         UIView.animate(withDuration: transitionDuration(using: transitionContext), delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveLinear, animations: { 
-                fromViewController?.view.alpha = 0.5
+//                fromViewController?.view.alpha = 0.5
                 toViewController?.view.frame = finalFrameForVC
             }) { (finish) in
                 transitionContext.completeTransition(true)

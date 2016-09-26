@@ -18,6 +18,7 @@
 		C3745DBC1D93E006003FB997 /* CustomControllerTransitionDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3745DBB1D93E006003FB997 /* CustomControllerTransitionDemoTests.swift */; };
 		C3745DC71D93E006003FB997 /* CustomControllerTransitionDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3745DC61D93E006003FB997 /* CustomControllerTransitionDemoUITests.swift */; };
 		C3745DD51D93E87E003FB997 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3745DD41D93E87E003FB997 /* ResultViewController.swift */; };
+		C38703F71D990D12006D0C33 /* CustomNavigationAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38703F61D990D12006D0C33 /* CustomNavigationAnimationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		C3745DC61D93E006003FB997 /* CustomControllerTransitionDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomControllerTransitionDemoUITests.swift; sourceTree = "<group>"; };
 		C3745DC81D93E006003FB997 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C3745DD41D93E87E003FB997 /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		C38703F61D990D12006D0C33 /* CustomNavigationAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationAnimationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				C3745DD41D93E87E003FB997 /* ResultViewController.swift */,
 				C35A920E1D95091A00AA5B68 /* CustomPresentAnimationController.swift */,
 				C35A92101D952DAB00AA5B68 /* CustomDismissAnimationController.swift */,
+				C38703F61D990D12006D0C33 /* CustomNavigationAnimationController.swift */,
 				C3745DAA1D93E006003FB997 /* Main.storyboard */,
 				C3745DAD1D93E006003FB997 /* Assets.xcassets */,
 				C3745DAF1D93E006003FB997 /* LaunchScreen.storyboard */,
@@ -280,6 +283,7 @@
 				C35A920F1D95091A00AA5B68 /* CustomPresentAnimationController.swift in Sources */,
 				C3745DA71D93E006003FB997 /* AppDelegate.swift in Sources */,
 				C3745DD51D93E87E003FB997 /* ResultViewController.swift in Sources */,
+				C38703F71D990D12006D0C33 /* CustomNavigationAnimationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

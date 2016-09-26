@@ -142,6 +142,15 @@ SWIFT_CLASS("_TtC30CustomControllerTransitionDemo32CustomDismissAnimationControl
 @end
 
 
+SWIFT_CLASS("_TtC30CustomControllerTransitionDemo35CustomNavigationAnimationController")
+@interface CustomNavigationAnimationController : NSObject <UIViewControllerAnimatedTransitioning>
+@property (nonatomic) BOOL reverse;
+- (NSTimeInterval)transitionDuration:(id <UIViewControllerContextTransitioning> _Nullable)transitionContext;
+- (void)animateTransition:(id <UIViewControllerContextTransitioning> _Nonnull)transitionContext;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 SWIFT_CLASS("_TtC30CustomControllerTransitionDemo32CustomPresentAnimationController")
 @interface CustomPresentAnimationController : NSObject <UIViewControllerAnimatedTransitioning>
 - (NSTimeInterval)transitionDuration:(id <UIViewControllerContextTransitioning> _Nullable)transitionContext;
@@ -151,19 +160,22 @@ SWIFT_CLASS("_TtC30CustomControllerTransitionDemo32CustomPresentAnimationControl
 
 @class UIImageView;
 @class UIButton;
+@class UINavigationController;
 @class NSBundle;
 @class NSCoder;
 
 SWIFT_CLASS("_TtC30CustomControllerTransitionDemo20ResultViewController")
-@interface ResultViewController : UIViewController <UIViewControllerTransitioningDelegate>
+@interface ResultViewController : UIViewController <UINavigationControllerDelegate, UIViewControllerTransitioningDelegate>
 @property (nonatomic, weak) UIButton * _Nullable dismissButton;
+@property (nonatomic, readonly, strong) CustomNavigationAnimationController * _Nonnull customNavigationAnimationController;
 @property (nonatomic, readonly, strong) CustomPresentAnimationController * _Nonnull customPresentAnimationController;
 @property (nonatomic, readonly, strong) CustomDismissAnimationController * _Nonnull customDismissAnimationController;
-@property (nonatomic, readonly, strong) UIImageView * _Nonnull imageView;
+@property (nonatomic, strong) UIImageView * _Nullable imageView;
 - (void)viewDidLoad;
 - (void)dismissActionWithButton:(UIButton * _Nonnull)button;
 - (id <UIViewControllerAnimatedTransitioning> _Nullable)animationControllerForDismissedController:(UIViewController * _Nonnull)dismissed;
 - (id <UIViewControllerAnimatedTransitioning> _Nullable)animationControllerForPresentedController:(UIViewController * _Nonnull)presented presentingController:(UIViewController * _Nonnull)presenting sourceController:(UIViewController * _Nonnull)source;
+- (id <UIViewControllerAnimatedTransitioning> _Nullable)navigationController:(UINavigationController * _Nonnull)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController * _Nonnull)fromVC toViewController:(UIViewController * _Nonnull)toVC;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -171,11 +183,13 @@ SWIFT_CLASS("_TtC30CustomControllerTransitionDemo20ResultViewController")
 @class UITableView;
 
 SWIFT_CLASS("_TtC30CustomControllerTransitionDemo14ViewController")
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UINavigationControllerDelegate>
 @property (nonatomic, strong) UITableView * _Nullable tableView;
+@property (nonatomic, readonly, strong) CustomNavigationAnimationController * _Nonnull customNavigationAnimationController;
 @property (nonatomic, copy) NSArray<NSString *> * _Nonnull titleArray;
 - (void)viewDidLoad;
 - (void)rightButtonClickWithButton:(UIButton * _Nonnull)button;
+- (id <UIViewControllerAnimatedTransitioning> _Nullable)navigationController:(UINavigationController * _Nonnull)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController * _Nonnull)fromVC toViewController:(UIViewController * _Nonnull)toVC;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -185,6 +199,7 @@ SWIFT_CLASS("_TtC30CustomControllerTransitionDemo14ViewController")
 @interface ViewController (SWIFT_EXTENSION(CustomControllerTransitionDemo)) <UITableViewDelegate, UIScrollViewDelegate, UITableViewDataSource>
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section;
 - (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+- (void)tableView:(UITableView * _Nonnull)tableView didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 @end
 
 #pragma clang diagnostic pop

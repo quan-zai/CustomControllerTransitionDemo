@@ -8,26 +8,29 @@
 
 import UIKit
 
-class ResultViewController: UIViewController, UIViewControllerTransitioningDelegate {
+class ResultViewController: UIViewController, UIViewControllerTransitioningDelegate, UINavigationControllerDelegate {
 
     weak var dismissButton = UIButton()
+    
+    let customNavigationAnimationController = CustomNavigationAnimationController()
     
     let customPresentAnimationController = CustomPresentAnimationController()
     
     let customDismissAnimationController = CustomDismissAnimationController()
     
-    let imageView:UIImageView = UIImageView()
+    var imageView:UIImageView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        imageView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 300)
-        imageView.image = UIImage(named: "image.jpg")
+        imageView = UIImageView(frame: CGRect(x: 50, y: 20, width: UIScreen.main.bounds.width - 100, height: 300))
+        imageView?.image = UIImage(named: "image.jpg")
         
-        view.addSubview(imageView)
+        view.addSubview(imageView!)
         
         view.backgroundColor = UIColor.white
         self.transitioningDelegate = self
+        self.navigationController?.delegate = self;
         
         let button = UIButton(type: .system)
         button.setTitle("dismiss", for: .normal)
@@ -47,5 +50,14 @@ class ResultViewController: UIViewController, UIViewControllerTransitioningDeleg
     
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return customPresentAnimationController
+    }
+    
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        if operation == .push {
+            customNavigationAnimationController.reverse = true
+        } else {
+            customNavigationAnimationController.reverse = false
+        }
+        return customNavigationAnimationController
     }
 }

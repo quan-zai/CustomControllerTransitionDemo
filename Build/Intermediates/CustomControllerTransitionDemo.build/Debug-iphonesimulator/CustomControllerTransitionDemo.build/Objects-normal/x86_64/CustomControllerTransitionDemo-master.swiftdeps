@@ -1,9 +1,10 @@
 version: "Apple Swift version 3.0 (swiftlang-800.0.46.2 clang-800.0.38)"
 options: "bfcccde021f78abe9d23f3119cab7758"
-build_time: [527941485, 124764000]
+build_time: [528193971, 3372000]
 inputs:
-  "/Users/atyun-monitor/Desktop/Swift/CustomControllerTransitionDemo/CustomControllerTransitionDemo/ViewController.swift": [527940581, 0]
-  "/Users/atyun-monitor/Desktop/Swift/CustomControllerTransitionDemo/CustomControllerTransitionDemo/CustomDismissAnimationController.swift": [527941201, 0]
-  "/Users/atyun-monitor/Desktop/Swift/CustomControllerTransitionDemo/CustomControllerTransitionDemo/CustomPresentAnimationController.swift": [527938220, 0]
+  "/Users/atyun-monitor/Desktop/Swift/CustomControllerTransitionDemo/CustomControllerTransitionDemo/ViewController.swift": [528193650, 0]
+  "/Users/atyun-monitor/Desktop/Swift/CustomControllerTransitionDemo/CustomControllerTransitionDemo/CustomDismissAnimationController.swift": [528192730, 0]
+  "/Users/atyun-monitor/Desktop/Swift/CustomControllerTransitionDemo/CustomControllerTransitionDemo/CustomPresentAnimationController.swift": [528189379, 0]
   "/Users/atyun-monitor/Desktop/Swift/CustomControllerTransitionDemo/CustomControllerTransitionDemo/AppDelegate.swift": [527853968, 0]
-  "/Users/atyun-monitor/Desktop/Swift/CustomControllerTransitionDemo/CustomControllerTransitionDemo/ResultViewController.swift": [527941485, 0]
+  "/Users/atyun-monitor/Desktop/Swift/CustomControllerTransitionDemo/CustomControllerTransitionDemo/ResultViewController.swift": [528193970, 0]
+  "/Users/atyun-monitor/Desktop/Swift/CustomControllerTransitionDemo/CustomControllerTransitionDemo/CustomNavigationAnimationController.swift": [528193919, 0]

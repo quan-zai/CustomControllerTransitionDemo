@@ -11,7 +11,7 @@ import UIKit
 class CustomDismissAnimationController: NSObject, UIViewControllerAnimatedTransitioning {
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return 2
+        return 2.0
     }
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
@@ -19,24 +19,28 @@ class CustomDismissAnimationController: NSObject, UIViewControllerAnimatedTransi
         let toViewController = transitionContext.viewController(forKey: .to)
         let finalFrameForVC = transitionContext.finalFrame(for: toViewController!)
         let containerView = transitionContext.containerView
-        toViewController?.view.frame = finalFrameForVC
-        toViewController?.view.alpha = 0.5
+        toViewController?.view.frame = finalFrameForVC.insetBy(dx: 40, dy: 40)
+        toViewController?.view.alpha = 0
         containerView.addSubview(toViewController!.view)
         containerView.sendSubview(toBack: toViewController!.view)
         
         let snapshotView = fromeViewController?.view.snapshotView(afterScreenUpdates: false)
         snapshotView?.frame = (fromeViewController?.view.frame)!
         containerView.addSubview(snapshotView!)
+        
+        toViewController?.view.addSubview(snapshotView!)
 
         fromeViewController?.view.removeFromSuperview()
         
-        UIView.animate(withDuration:  transitionDuration(using: transitionContext), animations: {
-            
-            snapshotView?.frame = (fromeViewController?.view.frame.insetBy(dx: (fromeViewController?.view.frame.size.width)! / 2, dy: (fromeViewController?.view.frame.size.height)!  / 2))!
+        containerView.addSubview(snapshotView!)
+        
+        UIView.animate(withDuration:  transitionDuration(using: transitionContext), delay: 1, options: .curveEaseIn, animations: {
+            snapshotView?.frame = (fromeViewController?.view.frame.insetBy(dx: (fromeViewController?.view.frame.size.width)! / 2, dy: (fromeViewController?.view.frame.size.height)! / 2))!
             toViewController?.view.alpha = 1.0
-            }) { (finish) in
-                snapshotView?.removeFromSuperview()
-                transitionContext.completeTransition(true)
+            toViewController?.view.frame = finalFrameForVC
+        }) { (finish) in
+            snapshotView?.removeFromSuperview()
+            transitionContext.completeTransition(true)
         }
     }
 }
