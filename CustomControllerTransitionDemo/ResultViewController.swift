@@ -51,7 +51,7 @@ class ResultViewController: UIViewController, UIViewControllerTransitioningDeleg
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return customPresentAnimationController
     }
-    
+     
     func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         if operation == .push {
             customNavigationAnimationController.reverse = true
