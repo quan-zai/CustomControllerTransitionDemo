@@ -6,18 +6,18 @@ provides-nominal:
 provides-member:
 - ["C30CustomControllerTransitionDemo32CustomDismissAnimationController", ""]
 provides-dynamic-lookup:
-- "animateTransition"
 - "transitionDuration"
+- "animateTransition"
 depends-top-level:
-- "CustomDismissAnimationController"
-- !private "BooleanLiteralType"
-- "TimeInterval"
-- "UIViewControllerAnimatedTransitioning"
-- "AssignmentPrecedence"
-- "NSObject"
 - !private "/"
-- !private "UIView"
+- !private "BooleanLiteralType"
+- "NSObject"
 - "UIViewControllerContextTransitioning"
+- "UIViewControllerAnimatedTransitioning"
+- !private "UIView"
+- "CustomDismissAnimationController"
+- "AssignmentPrecedence"
+- "TimeInterval"
 depends-member:
 - !private ["Ps9AnyObject", "UIView"]
 - !private ["Ps9AnyObject", "addSubview"]
